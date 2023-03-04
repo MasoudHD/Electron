@@ -1,6 +1,7 @@
-from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QAction, QTableWidget,QTableWidgetItem,QVBoxLayout,QHeaderView
+from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox, QTableWidgetItem,QVBoxLayout,QHeaderView
+from PyQt5.QtGui import QPixmap, QFont, QDoubleValidator
 from PyQt5.uic import loadUi
-from PyQt5.QtCore import pyqtSlot
+from PyQt5 import QtCore, QtWidgets
 import sys
 import schmittTrigger as mi
 
@@ -9,22 +10,44 @@ class MainUI(QMainWindow):
         super(MainUI, self).__init__()
         
         loadUi("main.ui", self)
+
+        self.setFixedSize(420, 540)
+        self.setWindowTitle("Electron")
+
+        onlyDouble = QDoubleValidator()
+        self.etVoh.setValidator(onlyDouble)
+        self.etVol.setValidator(onlyDouble)
+        self.etVref.setValidator(onlyDouble)
+        self.etVh.setValidator(onlyDouble)
+        self.etVl.setValidator(onlyDouble)
+        self.etError.setValidator(onlyDouble)
+
         self.pushButton.clicked.connect(self.clickHandler)
 
+        pixmap = QPixmap('res/img/schmittTrigerCircuit.png')
+        self.lblImg.setPixmap(pixmap)
+
+        resStandard = ('E12', 'E24')
+        self.cbStandards.addItems(resStandard)
+        
     def clickHandler(self):
-        data = []
-        data.append(float(self.etVoh.text()))
-        data.append(float(self.etVol.text()))
-        data.append(float(self.etVref.text()))
-        data.append(float(self.etVh.text()))
-        data.append(float(self.etVl.text()))
-        data.append(float(self.etError.text()))
-        res = mi.calculate(data)
-        self.Tables(res)
+        try:
+            data = []
+            data.append(float(self.etVoh.text()))
+            data.append(float(self.etVol.text()))
+            data.append(float(self.etVref.text()))
+            data.append(float(self.etVh.text()))
+            data.append(float(self.etVl.text()))
+            data.append(float(self.etError.text()))
+            res = mi.calculate(data, self.cbStandards.currentText())
+            self.Tables(res)
+        except:
+            QMessageBox.critical(self, 'Error', "An exception occurred", QMessageBox.Ok)
     
     def Tables(self, data):       
-        self.tableWidget.setRowCount(5)
+        self.tableWidget.setRowCount(len(data))
         self.tableWidget.setColumnCount(5)
+        self.tableWidget.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
 
         header = self.tableWidget.horizontalHeader()       
         header.setSectionResizeMode(0, QHeaderView.ResizeToContents)
@@ -32,16 +55,16 @@ class MainUI(QMainWindow):
         header.setSectionResizeMode(2, QHeaderView.ResizeToContents)
         header.setSectionResizeMode(3, QHeaderView.ResizeToContents)
         header.setSectionResizeMode(4, QHeaderView.ResizeToContents)
-        
+        self.tableWidget.setFont(QFont("Times", 12))
+
         i = 0
         for d in data:
-            self.tableWidget.setItem(i, 0, QTableWidgetItem(d[0]))
-            self.tableWidget.setItem(i, 1, QTableWidgetItem(d[1]))
-            self.tableWidget.setItem(i, 2, QTableWidgetItem(d[2]))
-            self.tableWidget.setItem(i, 3, QTableWidgetItem(d[3]))
-            self.tableWidget.setItem(i, 4, QTableWidgetItem(d[4]))
+            for j in range(len(d)):               
+                self.tableWidget.setItem(i, j, QTableWidgetItem(d[j]))
+                item = self.tableWidget.item(i, j)
+                item.setTextAlignment(QtCore.Qt.AlignCenter)            
             i += 1
-             
+
         self.vBox = QVBoxLayout()
         self.vBox.addWidget(self.tableWidget)
         self.setLayout(self.vBox)

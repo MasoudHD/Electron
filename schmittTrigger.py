@@ -3,7 +3,7 @@ E12 = (1, 1.2, 1.5, 1.8, 2.2, 2.7, 3.3, 3.9, 4.7, 5.6, 6.8, 8.2)
 E24 = (1, 1.1, 1.2, 1.3, 1.5, 1.6, 1.8, 2, 2.2, 2.4, 2.7, 3, 3.3, 3.6, 3.9, 4.3, 4.7, 5.1, 5.6, 6.2, 6.8, 7.5, 8.2, 9.1)
 
 
-def calculate(data):
+def calculate(data, resStandard):
     Voh = data[0]
     Vol = data[1]
     Vs = 0.0
@@ -27,7 +27,10 @@ def calculate(data):
     R3 = (a*g+b*h)/(c*g)
     R1 = (g*R3)/h
 
-    selList = list(E12)
+    if resStandard == "E12":
+        selList = list(E12)
+    elif resStandard == "E24":
+        selList = list(E24) 
     tempVlList = []
     tempVhList = []
     tempR123List = []
