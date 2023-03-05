@@ -4,6 +4,7 @@ from PyQt5.uic import loadUi
 from PyQt5 import QtCore, QtWidgets, QtGui
 import sys
 import schmittTrigger as mi
+import qdarktheme
 
 class MainUI(QMainWindow):
     def __init__(self):
@@ -23,7 +24,10 @@ class MainUI(QMainWindow):
 
         self.pushButton.clicked.connect(self.clickHandler)
 
-        pixmap = QPixmap('res/img/schmittTrigerCircuit.png')
+        # self.tableWidget.QHeaderView.ResizeMode.setSectionResizeMode(QHeaderView.Stretch)
+        # self.tableWidget.QHeaderView.sectionResizeMode(QHeaderView.Stretch)
+
+        pixmap = QPixmap('res/img/schmittTrigerCircuitDark.png')
         self.lblImg.setPixmap(pixmap)
         resStandard = ('E12', 'E24')
         self.cbStandards.addItems(resStandard)
@@ -48,11 +52,11 @@ class MainUI(QMainWindow):
         self.tableWidget.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
 
         header = self.tableWidget.horizontalHeader()       
-        header.setSectionResizeMode(0, QHeaderView.ResizeToContents)
-        header.setSectionResizeMode(1, QHeaderView.ResizeToContents)
-        header.setSectionResizeMode(2, QHeaderView.ResizeToContents)
-        header.setSectionResizeMode(3, QHeaderView.ResizeToContents)
-        header.setSectionResizeMode(4, QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(0, QHeaderView.Stretch)
+        header.setSectionResizeMode(1, QHeaderView.Stretch)
+        header.setSectionResizeMode(2, QHeaderView.Stretch)
+        header.setSectionResizeMode(3, QHeaderView.Stretch)
+        header.setSectionResizeMode(4, QHeaderView.Stretch)
         self.tableWidget.setFont(QFont("Times", 12))
 
         i = 0
@@ -62,7 +66,7 @@ class MainUI(QMainWindow):
                 item = self.tableWidget.item(i, j)
                 item.setTextAlignment(QtCore.Qt.AlignCenter)
                 if i == 0:
-                    self.tableWidget.item(0, j).setBackground(QtGui.QColor("#00f200"))            
+                    self.tableWidget.item(0, j).setBackground(QtGui.QColor("#009900"))            
             i += 1
 
         self.vBox = QVBoxLayout()
@@ -70,7 +74,9 @@ class MainUI(QMainWindow):
         self.setLayout(self.vBox)
 
 if __name__ == "__main__":
+    qdarktheme.enable_hi_dpi()
     app = QApplication(sys.argv)
+    qdarktheme.setup_theme(corner_shape="rounded")
     ui = MainUI()
     ui.show()
     app.exec_()
