@@ -13,7 +13,7 @@ def calculate(data, resStandard):
     Vh = data[3]
     Vl = data[4]
 
-    er = data[5]
+    er = data[5]/100
 
     a = R2*(Voh-Vh)
     b = R2*(Vr-Vh)
