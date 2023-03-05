@@ -51,15 +51,28 @@ def calculate(data, resStandard):
             tempVhList.append(tempVh[i])
             tempVlList.append(tempVl[i])
 
+    
+    listMinDiffVh = [abs(x-Vh) for x in tempVhList].copy()
+    listMinDiffVl = [abs(x-Vl) for x in tempVlList].copy()
+    listMinDiffVhVl = []
+    for i in range(len(listMinDiffVh)):
+        listMinDiffVhVl.append(listMinDiffVh[i]**2 + listMinDiffVl[i]**2)
+    index = listMinDiffVhVl.index(min(listMinDiffVhVl))
     result = []
     for i in range(0, len(tempVhList)):
         if tempVhList[i]*(1-er)<=Vh<=tempVhList[i]*(1+er) and tempVlList[i]*(1-er)<=Vl<=tempVlList[i]*(1+er):
+            j = 0
+            if not result:
+               j = index
+            else:
+                j = i 
             rowData = []
-            rowData.append("{:.2f}".format(tempVhList[i]))
-            rowData.append("{:.2f}".format(tempVlList[i]))
-            rowData.append("{:.2f}".format(tempR123List[i][0]))
-            rowData.append("{:.2f}".format(tempR123List[i][1]))
-            rowData.append("{:.2f}".format(tempR123List[i][2]))
+            rowData.append("{:.2f}".format(tempVhList[j]))
+            rowData.append("{:.2f}".format(tempVlList[j]))
+            rowData.append("{:.2f}".format(tempR123List[j][0]))
+            rowData.append("{:.2f}".format(tempR123List[j][1]))
+            rowData.append("{:.2f}".format(tempR123List[j][2]))
+
             if rowData not in result:
                 result.append(rowData)
     return result

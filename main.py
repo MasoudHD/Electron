@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox, QTableWidgetItem,QVBoxLayout,QHeaderView
 from PyQt5.QtGui import QPixmap, QFont, QDoubleValidator
 from PyQt5.uic import loadUi
-from PyQt5 import QtCore, QtWidgets
+from PyQt5 import QtCore, QtWidgets, QtGui
 import sys
 import schmittTrigger as mi
 
@@ -13,7 +13,6 @@ class MainUI(QMainWindow):
 
         self.setFixedSize(420, 540)
         self.setWindowTitle("Electron")
-
         onlyDouble = QDoubleValidator()
         self.etVoh.setValidator(onlyDouble)
         self.etVol.setValidator(onlyDouble)
@@ -26,7 +25,6 @@ class MainUI(QMainWindow):
 
         pixmap = QPixmap('res/img/schmittTrigerCircuit.png')
         self.lblImg.setPixmap(pixmap)
-
         resStandard = ('E12', 'E24')
         self.cbStandards.addItems(resStandard)
         
@@ -59,10 +57,12 @@ class MainUI(QMainWindow):
 
         i = 0
         for d in data:
-            for j in range(len(d)):               
+            for j in range(len(d)): 
                 self.tableWidget.setItem(i, j, QTableWidgetItem(d[j]))
                 item = self.tableWidget.item(i, j)
-                item.setTextAlignment(QtCore.Qt.AlignCenter)            
+                item.setTextAlignment(QtCore.Qt.AlignCenter)
+                if i == 0:
+                    self.tableWidget.item(0, j).setBackground(QtGui.QColor("#00f200"))            
             i += 1
 
         self.vBox = QVBoxLayout()
