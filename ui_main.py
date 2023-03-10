@@ -18,8 +18,11 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QAbstractScrollArea, QApplication, QComboBox, QFrame,
     QGridLayout, QHeaderView, QLCDNumber, QLabel,
     QLayout, QLineEdit, QMainWindow, QMenuBar,
-    QPushButton, QRadioButton, QSizePolicy, QStatusBar,
-    QTabWidget, QTableWidget, QTableWidgetItem, QWidget)
+    QPlainTextEdit, QPushButton, QRadioButton, QSizePolicy,
+    QStatusBar, QTabWidget, QTableWidget, QTableWidgetItem,
+    QWidget)
+
+from pyqtgraph import PlotWidget
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -81,7 +84,7 @@ class Ui_MainWindow(object):
         self.tableWidget.verticalHeader().setStretchLastSection(False)
         self.layoutWidget = QWidget(self.tab)
         self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(10, 40, 131, 222))
+        self.layoutWidget.setGeometry(QRect(10, 40, 131, 254))
         self.gridLayout = QGridLayout(self.layoutWidget)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setSizeConstraint(QLayout.SetFixedSize)
@@ -266,13 +269,13 @@ class Ui_MainWindow(object):
 
         self.gridLayout_3.addWidget(self.label_22, 0, 0, 1, 1)
 
-        self.lcdReolution = QLCDNumber(self.widget)
-        self.lcdReolution.setObjectName(u"lcdReolution")
-        self.lcdReolution.setLineWidth(1)
-        self.lcdReolution.setDigitCount(10)
-        self.lcdReolution.setSegmentStyle(QLCDNumber.Filled)
+        self.lcdResolution = QLCDNumber(self.widget)
+        self.lcdResolution.setObjectName(u"lcdResolution")
+        self.lcdResolution.setLineWidth(1)
+        self.lcdResolution.setDigitCount(10)
+        self.lcdResolution.setSegmentStyle(QLCDNumber.Filled)
 
-        self.gridLayout_3.addWidget(self.lcdReolution, 0, 1, 1, 1)
+        self.gridLayout_3.addWidget(self.lcdResolution, 0, 1, 1, 1)
 
         self.label_25 = QLabel(self.widget)
         self.label_25.setObjectName(u"label_25")
@@ -514,13 +517,97 @@ class Ui_MainWindow(object):
         self.tab_5.setObjectName(u"tab_5")
         self.tabWidget_2.addTab(self.tab_5, "")
         self.tabWidget.addTab(self.tab_2, "")
+        self.tab_6 = QWidget()
+        self.tab_6.setObjectName(u"tab_6")
+        self.tblPoly = QTableWidget(self.tab_6)
+        if (self.tblPoly.rowCount() < 2):
+            self.tblPoly.setRowCount(2)
+        __qtablewidgetitem5 = QTableWidgetItem()
+        __qtablewidgetitem5.setFont(font3);
+        self.tblPoly.setVerticalHeaderItem(0, __qtablewidgetitem5)
+        __qtablewidgetitem6 = QTableWidgetItem()
+        __qtablewidgetitem6.setFont(font3);
+        self.tblPoly.setVerticalHeaderItem(1, __qtablewidgetitem6)
+        self.tblPoly.setObjectName(u"tblPoly")
+        self.tblPoly.setGeometry(QRect(10, 100, 411, 111))
+        self.tblPoly.setFont(font3)
+        self.btnPolyCalculate = QPushButton(self.tab_6)
+        self.btnPolyCalculate.setObjectName(u"btnPolyCalculate")
+        self.btnPolyCalculate.setGeometry(QRect(10, 220, 93, 28))
+        self.btnPolyCalculate.setFont(font)
+        self.tabWidget_3 = QTabWidget(self.tab_6)
+        self.tabWidget_3.setObjectName(u"tabWidget_3")
+        self.tabWidget_3.setGeometry(QRect(10, 260, 401, 211))
+        self.tab_7 = QWidget()
+        self.tab_7.setObjectName(u"tab_7")
+        self.etPolyCoefficients = QPlainTextEdit(self.tab_7)
+        self.etPolyCoefficients.setObjectName(u"etPolyCoefficients")
+        self.etPolyCoefficients.setGeometry(QRect(10, 10, 377, 87))
+        self.etPolyCoefficients.setFont(font3)
+        self.etPolyCoefficients.setContextMenuPolicy(Qt.NoContextMenu)
+        self.etPolyCoefficients.setReadOnly(True)
+        self.etPolyCoefficients.setTextInteractionFlags(Qt.TextSelectableByMouse)
+        self.tabWidget_3.addTab(self.tab_7, "")
+        self.tab_8 = QWidget()
+        self.tab_8.setObjectName(u"tab_8")
+        self.graphWidget = PlotWidget(self.tab_8)
+        self.graphWidget.setObjectName(u"graphWidget")
+        self.graphWidget.setGeometry(QRect(0, 0, 391, 181))
+        self.tabWidget_3.addTab(self.tab_8, "")
+        self.widget5 = QWidget(self.tab_6)
+        self.widget5.setObjectName(u"widget5")
+        self.widget5.setGeometry(QRect(10, 20, 223, 81))
+        self.gridLayout_8 = QGridLayout(self.widget5)
+        self.gridLayout_8.setObjectName(u"gridLayout_8")
+        self.gridLayout_8.setContentsMargins(0, 0, 0, 0)
+        self.label_30 = QLabel(self.widget5)
+        self.label_30.setObjectName(u"label_30")
+        self.label_30.setEnabled(True)
+        self.label_30.setMaximumSize(QSize(100, 16777215))
+        self.label_30.setFont(font2)
+
+        self.gridLayout_8.addWidget(self.label_30, 0, 0, 1, 1)
+
+        self.etPolyOrder = QLineEdit(self.widget5)
+        self.etPolyOrder.setObjectName(u"etPolyOrder")
+        sizePolicy.setHeightForWidth(self.etPolyOrder.sizePolicy().hasHeightForWidth())
+        self.etPolyOrder.setSizePolicy(sizePolicy)
+        self.etPolyOrder.setMaximumSize(QSize(60, 16777215))
+        self.etPolyOrder.setFont(font3)
+
+        self.gridLayout_8.addWidget(self.etPolyOrder, 0, 1, 1, 1)
+
+        self.label_29 = QLabel(self.widget5)
+        self.label_29.setObjectName(u"label_29")
+        self.label_29.setEnabled(True)
+        self.label_29.setMaximumSize(QSize(100, 16777215))
+        self.label_29.setFont(font2)
+
+        self.gridLayout_8.addWidget(self.label_29, 1, 0, 1, 1)
+
+        self.etPolyLength = QLineEdit(self.widget5)
+        self.etPolyLength.setObjectName(u"etPolyLength")
+        sizePolicy.setHeightForWidth(self.etPolyLength.sizePolicy().hasHeightForWidth())
+        self.etPolyLength.setSizePolicy(sizePolicy)
+        self.etPolyLength.setMaximumSize(QSize(60, 16777215))
+        self.etPolyLength.setFont(font3)
+
+        self.gridLayout_8.addWidget(self.etPolyLength, 1, 1, 1, 1)
+
+        self.btnPolyApply = QPushButton(self.widget5)
+        self.btnPolyApply.setObjectName(u"btnPolyApply")
+        self.btnPolyApply.setFont(font)
+
+        self.gridLayout_8.addWidget(self.btnPolyApply, 1, 2, 1, 1)
+
+        self.tabWidget.addTab(self.tab_6, "")
 
         self.gridLayout_6.addWidget(self.tabWidget, 0, 0, 1, 1)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 450, 21))
+        self.menubar.setGeometry(QRect(0, 0, 450, 26))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -530,6 +617,7 @@ class Ui_MainWindow(object):
 
         self.tabWidget.setCurrentIndex(0)
         self.tabWidget_2.setCurrentIndex(0)
+        self.tabWidget_3.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -597,5 +685,18 @@ class Ui_MainWindow(object):
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_4), QCoreApplication.translate("MainWindow", u"USART", None))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_5), QCoreApplication.translate("MainWindow", u"TIMER", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"MCU", None))
+        ___qtablewidgetitem5 = self.tblPoly.verticalHeaderItem(0)
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"x", None));
+        ___qtablewidgetitem6 = self.tblPoly.verticalHeaderItem(1)
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"y", None));
+        self.btnPolyCalculate.setText(QCoreApplication.translate("MainWindow", u"Calculate", None))
+        self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.tab_7), QCoreApplication.translate("MainWindow", u"Coefficients", None))
+        self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.tab_8), QCoreApplication.translate("MainWindow", u"Graph", None))
+        self.label_30.setText(QCoreApplication.translate("MainWindow", u"Order", None))
+        self.etPolyOrder.setText("")
+        self.label_29.setText(QCoreApplication.translate("MainWindow", u"Length", None))
+        self.etPolyLength.setText("")
+        self.btnPolyApply.setText(QCoreApplication.translate("MainWindow", u"Apply", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_6), QCoreApplication.translate("MainWindow", u"Polynomial", None))
     # retranslateUi
 
