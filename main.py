@@ -48,6 +48,10 @@ class MainUI(QMainWindow):
         self.etPolyLength.setValidator(onlyInteger)
         self.etPolyOrder.setValidator(onlyInteger)
 
+        self.etTimFrq.setValidator(onlyDouble)
+        self.etTimTime.setValidator(onlyDouble)
+        self.etTimError.setValidator(onlyDouble)
+
         self.etAdcAdc.setDisabled(True)
         self.etAdcVoltage.setDisabled(False)
         self.lcdVoltage.setDisabled(self.rbVoltage.isChecked())
@@ -59,6 +63,7 @@ class MainUI(QMainWindow):
         self.btnAdcCalculate.clicked.connect(self.btnAdcCalculateClickHandler)
         self.btnPolyApply.clicked.connect(self.btnPolyApplyHandler)
         self.btnPolyCalculate.clicked.connect(self.btnPolyCalculateHandler)
+        self.btnTimCalculate.clicked.connect(self.btnTimCalculateeHandler)
 
         delegate = NumericDelegate(self.tblPoly)
         self.tblPoly.setItemDelegate(delegate)
@@ -82,6 +87,14 @@ class MainUI(QMainWindow):
         self.etAdcAdc.setDisabled(self.rbVoltage.isChecked())
         self.lcdVoltage.setDisabled(self.rbVoltage.isChecked())
         self.lcdAdc.setDisabled(self.rbAdc.isChecked())
+
+    def btnTimCalculateeHandler(self):
+        frq = float(self.etTimFrq.text())
+        time = float(self.etTimTime.text())
+        error = float(self.etTimError.text())
+        res = mcu.timCalculator(frq, time, error)
+
+        self.Tables(res, 2, False, self.tblTim)
 
     def btnPolyCalculateHandler(self):
         self.graphWidget.clear()
@@ -144,35 +157,35 @@ class MainUI(QMainWindow):
             data.append(float(self.etVl.text()))
             data.append(float(self.etError.text()))
             res = mi.calculate(data, self.cbStandards.currentText())
-            self.Tables(res)
+            self.Tables(res, 5, True, self.tableWidget)
         except:
             QMessageBox.critical(self, 'Error', "An exception occurred", QMessageBox.Ok)
     
-    def Tables(self, data):       
-        self.tableWidget.setRowCount(len(data))
-        self.tableWidget.setColumnCount(5)
-        self.tableWidget.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
 
-        header = self.tableWidget.horizontalHeader()       
-        header.setSectionResizeMode(0, QHeaderView.Stretch)
-        header.setSectionResizeMode(1, QHeaderView.Stretch)
-        header.setSectionResizeMode(2, QHeaderView.Stretch)
-        header.setSectionResizeMode(3, QHeaderView.Stretch)
-        header.setSectionResizeMode(4, QHeaderView.Stretch)
-        self.tableWidget.setFont(QFont("Times", 12))
+    def Tables(self, data, colNumber, firstRowColor,tblWidget):       
+        tblWidget.setRowCount(len(data))
+        tblWidget.setColumnCount(colNumber)
+        tblWidget.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+
+        header = tblWidget.horizontalHeader()               
+        for i in range(0, colNumber):
+            header.setSectionResizeMode(i, QHeaderView.Stretch)
+        header.show()
+
+        tblWidget.setFont(QFont("Times", 12))
 
         i = 0
         for d in data:
             for j in range(len(d)): 
-                self.tableWidget.setItem(i, j, QTableWidgetItem(d[j]))
-                item = self.tableWidget.item(i, j)
+                tblWidget.setItem(i, j, QTableWidgetItem(d[j]))
+                item = tblWidget.item(i, j)
                 item.setTextAlignment(QtCore.Qt.AlignCenter)
-                if i == 0:
-                    self.tableWidget.item(0, j).setBackground(QtGui.QColor("#009900"))            
+                if firstRowColor and i == 0:
+                    tblWidget.item(0, j).setBackground(QtGui.QColor("#009900"))            
             i += 1
 
         self.vBox = QVBoxLayout()
-        self.vBox.addWidget(self.tableWidget)
+        self.vBox.addWidget(tblWidget)
         self.setLayout(self.vBox)
 
 if __name__ == "__main__":
