@@ -517,7 +517,7 @@ class Ui_MainWindow(object):
         self.tab_5.setObjectName(u"tab_5")
         self.layoutWidget_2 = QWidget(self.tab_5)
         self.layoutWidget_2.setObjectName(u"layoutWidget_2")
-        self.layoutWidget_2.setGeometry(QRect(100, 50, 188, 143))
+        self.layoutWidget_2.setGeometry(QRect(10, 30, 243, 143))
         self.gridLayout_9 = QGridLayout(self.layoutWidget_2)
         self.gridLayout_9.setObjectName(u"gridLayout_9")
         self.gridLayout_9.setContentsMargins(0, 0, 0, 0)
@@ -525,13 +525,15 @@ class Ui_MainWindow(object):
         self.etTimError.setObjectName(u"etTimError")
         sizePolicy.setHeightForWidth(self.etTimError.sizePolicy().hasHeightForWidth())
         self.etTimError.setSizePolicy(sizePolicy)
-        self.etTimError.setMaximumSize(QSize(60, 16777215))
+        self.etTimError.setMaximumSize(QSize(80, 16777215))
         self.etTimError.setFont(font3)
 
         self.gridLayout_9.addWidget(self.etTimError, 2, 1, 1, 1)
 
         self.label_36 = QLabel(self.layoutWidget_2)
         self.label_36.setObjectName(u"label_36")
+        sizePolicy2.setHeightForWidth(self.label_36.sizePolicy().hasHeightForWidth())
+        self.label_36.setSizePolicy(sizePolicy2)
         self.label_36.setFont(font)
 
         self.gridLayout_9.addWidget(self.label_36, 2, 2, 1, 1)
@@ -540,7 +542,7 @@ class Ui_MainWindow(object):
         self.etTimTime.setObjectName(u"etTimTime")
         sizePolicy.setHeightForWidth(self.etTimTime.sizePolicy().hasHeightForWidth())
         self.etTimTime.setSizePolicy(sizePolicy)
-        self.etTimTime.setMaximumSize(QSize(60, 16777215))
+        self.etTimTime.setMaximumSize(QSize(80, 16777215))
         self.etTimTime.setFont(font3)
 
         self.gridLayout_9.addWidget(self.etTimTime, 1, 1, 1, 1)
@@ -553,26 +555,14 @@ class Ui_MainWindow(object):
 
         self.gridLayout_9.addWidget(self.label_35, 2, 0, 1, 1)
 
-        self.label_34 = QLabel(self.layoutWidget_2)
-        self.label_34.setObjectName(u"label_34")
-        self.label_34.setFont(font)
-
-        self.gridLayout_9.addWidget(self.label_34, 1, 2, 1, 1)
-
         self.etTimFrq = QLineEdit(self.layoutWidget_2)
         self.etTimFrq.setObjectName(u"etTimFrq")
         sizePolicy.setHeightForWidth(self.etTimFrq.sizePolicy().hasHeightForWidth())
         self.etTimFrq.setSizePolicy(sizePolicy)
-        self.etTimFrq.setMaximumSize(QSize(60, 16777215))
+        self.etTimFrq.setMaximumSize(QSize(80, 16777215))
         self.etTimFrq.setFont(font3)
 
         self.gridLayout_9.addWidget(self.etTimFrq, 0, 1, 1, 1)
-
-        self.label_32 = QLabel(self.layoutWidget_2)
-        self.label_32.setObjectName(u"label_32")
-        self.label_32.setFont(font)
-
-        self.gridLayout_9.addWidget(self.label_32, 0, 2, 1, 1)
 
         self.label_33 = QLabel(self.layoutWidget_2)
         self.label_33.setObjectName(u"label_33")
@@ -590,9 +580,34 @@ class Ui_MainWindow(object):
 
         self.gridLayout_9.addWidget(self.label_31, 0, 0, 1, 1)
 
+        self.cbTimFrqUnit = QComboBox(self.layoutWidget_2)
+        self.cbTimFrqUnit.addItem("")
+        self.cbTimFrqUnit.addItem("")
+        self.cbTimFrqUnit.addItem("")
+        self.cbTimFrqUnit.setObjectName(u"cbTimFrqUnit")
+        sizePolicy4.setHeightForWidth(self.cbTimFrqUnit.sizePolicy().hasHeightForWidth())
+        self.cbTimFrqUnit.setSizePolicy(sizePolicy4)
+        self.cbTimFrqUnit.setMaximumSize(QSize(60, 16777215))
+        self.cbTimFrqUnit.setFont(font)
+
+        self.gridLayout_9.addWidget(self.cbTimFrqUnit, 0, 2, 1, 1)
+
+        self.cbTimTimeUnit = QComboBox(self.layoutWidget_2)
+        self.cbTimTimeUnit.addItem("")
+        self.cbTimTimeUnit.addItem("")
+        self.cbTimTimeUnit.addItem("")
+        self.cbTimTimeUnit.addItem("")
+        self.cbTimTimeUnit.setObjectName(u"cbTimTimeUnit")
+        sizePolicy4.setHeightForWidth(self.cbTimTimeUnit.sizePolicy().hasHeightForWidth())
+        self.cbTimTimeUnit.setSizePolicy(sizePolicy4)
+        self.cbTimTimeUnit.setMaximumSize(QSize(60, 16777215))
+        self.cbTimTimeUnit.setFont(font)
+
+        self.gridLayout_9.addWidget(self.cbTimTimeUnit, 1, 2, 1, 1)
+
         self.btnTimCalculate = QPushButton(self.tab_5)
         self.btnTimCalculate.setObjectName(u"btnTimCalculate")
-        self.btnTimCalculate.setGeometry(QRect(140, 210, 101, 28))
+        self.btnTimCalculate.setGeometry(QRect(290, 210, 101, 28))
         self.btnTimCalculate.setFont(font)
         self.btnTimCalculate.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.tblTim = QTableWidget(self.tab_5)
@@ -605,7 +620,7 @@ class Ui_MainWindow(object):
         __qtablewidgetitem6.setFont(font1);
         self.tblTim.setHorizontalHeaderItem(1, __qtablewidgetitem6)
         self.tblTim.setObjectName(u"tblTim")
-        self.tblTim.setGeometry(QRect(20, 250, 371, 181))
+        self.tblTim.setGeometry(QRect(10, 250, 386, 181))
         sizePolicy5 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         sizePolicy5.setHorizontalStretch(0)
         sizePolicy5.setVerticalStretch(0)
@@ -724,7 +739,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(1)
         self.tabWidget_2.setCurrentIndex(2)
         self.tabWidget_3.setCurrentIndex(0)
 
@@ -796,11 +811,18 @@ class Ui_MainWindow(object):
         self.label_36.setText(QCoreApplication.translate("MainWindow", u"%", None))
         self.etTimTime.setText("")
         self.label_35.setText(QCoreApplication.translate("MainWindow", u"Error", None))
-        self.label_34.setText(QCoreApplication.translate("MainWindow", u"ms", None))
         self.etTimFrq.setText("")
-        self.label_32.setText(QCoreApplication.translate("MainWindow", u"MHz", None))
         self.label_33.setText(QCoreApplication.translate("MainWindow", u"Time", None))
         self.label_31.setText(QCoreApplication.translate("MainWindow", u"Frequency", None))
+        self.cbTimFrqUnit.setItemText(0, QCoreApplication.translate("MainWindow", u"Hz", None))
+        self.cbTimFrqUnit.setItemText(1, QCoreApplication.translate("MainWindow", u"KHz", None))
+        self.cbTimFrqUnit.setItemText(2, QCoreApplication.translate("MainWindow", u"MHz", None))
+
+        self.cbTimTimeUnit.setItemText(0, QCoreApplication.translate("MainWindow", u"sec", None))
+        self.cbTimTimeUnit.setItemText(1, QCoreApplication.translate("MainWindow", u"ms", None))
+        self.cbTimTimeUnit.setItemText(2, QCoreApplication.translate("MainWindow", u"us", None))
+        self.cbTimTimeUnit.setItemText(3, QCoreApplication.translate("MainWindow", u"ns", None))
+
         self.btnTimCalculate.setText(QCoreApplication.translate("MainWindow", u"Calculate", None))
         ___qtablewidgetitem5 = self.tblTim.horizontalHeaderItem(0)
         ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"Prescaler", None));

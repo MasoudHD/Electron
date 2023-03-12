@@ -29,7 +29,7 @@
        </font>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -1117,9 +1117,9 @@ background-color:#555555;
          <widget class="QWidget" name="layoutWidget_2">
           <property name="geometry">
            <rect>
-            <x>100</x>
-            <y>50</y>
-            <width>188</width>
+            <x>10</x>
+            <y>30</y>
+            <width>243</width>
             <height>143</height>
            </rect>
           </property>
@@ -1134,7 +1134,7 @@ background-color:#555555;
              </property>
              <property name="maximumSize">
               <size>
-               <width>60</width>
+               <width>80</width>
                <height>16777215</height>
               </size>
              </property>
@@ -1150,6 +1150,12 @@ background-color:#555555;
            </item>
            <item row="2" column="2">
             <widget class="QLabel" name="label_36">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -1170,7 +1176,7 @@ background-color:#555555;
              </property>
              <property name="maximumSize">
               <size>
-               <width>60</width>
+               <width>80</width>
                <height>16777215</height>
               </size>
              </property>
@@ -1205,18 +1211,6 @@ background-color:#555555;
              </property>
             </widget>
            </item>
-           <item row="1" column="2">
-            <widget class="QLabel" name="label_34">
-             <property name="font">
-              <font>
-               <pointsize>10</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>ms</string>
-             </property>
-            </widget>
-           </item>
            <item row="0" column="1">
             <widget class="QLineEdit" name="etTimFrq">
              <property name="sizePolicy">
@@ -1227,7 +1221,7 @@ background-color:#555555;
              </property>
              <property name="maximumSize">
               <size>
-               <width>60</width>
+               <width>80</width>
                <height>16777215</height>
               </size>
              </property>
@@ -1238,18 +1232,6 @@ background-color:#555555;
              </property>
              <property name="text">
               <string/>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="2">
-            <widget class="QLabel" name="label_32">
-             <property name="font">
-              <font>
-               <pointsize>10</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>MHz</string>
              </property>
             </widget>
            </item>
@@ -1295,12 +1277,89 @@ background-color:#555555;
              </property>
             </widget>
            </item>
+           <item row="0" column="2">
+            <widget class="QComboBox" name="cbTimFrqUnit">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>60</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
+             <item>
+              <property name="text">
+               <string>Hz</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>KHz</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>MHz</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QComboBox" name="cbTimTimeUnit">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>60</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
+             <item>
+              <property name="text">
+               <string>sec</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>ms</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>us</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>ns</string>
+              </property>
+             </item>
+            </widget>
+           </item>
           </layout>
          </widget>
          <widget class="QPushButton" name="btnTimCalculate">
           <property name="geometry">
            <rect>
-            <x>140</x>
+            <x>290</x>
             <y>210</y>
             <width>101</width>
             <height>28</height>
@@ -1321,9 +1380,9 @@ background-color:#555555;
          <widget class="QTableWidget" name="tblTim">
           <property name="geometry">
            <rect>
-            <x>20</x>
+            <x>10</x>
             <y>250</y>
-            <width>371</width>
+            <width>386</width>
             <height>181</height>
            </rect>
           </property>

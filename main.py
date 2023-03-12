@@ -92,7 +92,7 @@ class MainUI(QMainWindow):
         frq = float(self.etTimFrq.text())
         time = float(self.etTimTime.text())
         error = float(self.etTimError.text())
-        res = mcu.timCalculator(frq, time, error)
+        res = mcu.timCalculator(frq, time, error, self.cbTimFrqUnit.currentText(), self.cbTimTimeUnit.currentText())
 
         self.Tables(res, 2, False, self.tblTim)
 
