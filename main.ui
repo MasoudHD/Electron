@@ -530,7 +530,7 @@
          </font>
         </property>
         <property name="currentIndex">
-         <number>2</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab_3">
          <property name="font">
@@ -682,18 +682,6 @@ background-color:#555555;
            </rect>
           </property>
           <layout class="QGridLayout" name="gridLayout_5">
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_24">
-             <property name="font">
-              <font>
-               <pointsize>11</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Voltage to ADC</string>
-             </property>
-            </widget>
-           </item>
            <item row="0" column="1">
             <widget class="QLCDNumber" name="lcdAdc">
              <property name="styleSheet">
@@ -708,9 +696,9 @@ background-color:#555555;
             </widget>
            </item>
            <item row="0" column="2">
-            <widget class="QLabel" name="label_28">
+            <widget class="QLabel" name="label_32">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+              <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
@@ -721,7 +709,19 @@ background-color:#555555;
               </font>
              </property>
              <property name="text">
-              <string/>
+              <string>  </string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_24">
+             <property name="font">
+              <font>
+               <pointsize>11</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Voltage to ADC</string>
              </property>
             </widget>
            </item>

@@ -324,12 +324,6 @@ class Ui_MainWindow(object):
         self.gridLayout_5 = QGridLayout(self.layoutWidget3)
         self.gridLayout_5.setObjectName(u"gridLayout_5")
         self.gridLayout_5.setContentsMargins(0, 0, 0, 0)
-        self.label_24 = QLabel(self.layoutWidget3)
-        self.label_24.setObjectName(u"label_24")
-        self.label_24.setFont(font2)
-
-        self.gridLayout_5.addWidget(self.label_24, 0, 0, 1, 1)
-
         self.lcdAdc = QLCDNumber(self.layoutWidget3)
         self.lcdAdc.setObjectName(u"lcdAdc")
         self.lcdAdc.setStyleSheet(u"QLCDNumber:disabled {\n"
@@ -340,16 +334,19 @@ class Ui_MainWindow(object):
 
         self.gridLayout_5.addWidget(self.lcdAdc, 0, 1, 1, 1)
 
-        self.label_28 = QLabel(self.layoutWidget3)
-        self.label_28.setObjectName(u"label_28")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Preferred)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.label_28.sizePolicy().hasHeightForWidth())
-        self.label_28.setSizePolicy(sizePolicy3)
-        self.label_28.setFont(font)
+        self.label_32 = QLabel(self.layoutWidget3)
+        self.label_32.setObjectName(u"label_32")
+        sizePolicy2.setHeightForWidth(self.label_32.sizePolicy().hasHeightForWidth())
+        self.label_32.setSizePolicy(sizePolicy2)
+        self.label_32.setFont(font)
 
-        self.gridLayout_5.addWidget(self.label_28, 0, 2, 1, 1)
+        self.gridLayout_5.addWidget(self.label_32, 0, 2, 1, 1)
+
+        self.label_24 = QLabel(self.layoutWidget3)
+        self.label_24.setObjectName(u"label_24")
+        self.label_24.setFont(font2)
+
+        self.gridLayout_5.addWidget(self.label_24, 0, 0, 1, 1)
 
         self.layoutWidget4 = QWidget(self.tab_3)
         self.layoutWidget4.setObjectName(u"layoutWidget4")
@@ -451,11 +448,11 @@ class Ui_MainWindow(object):
         self.gridLayout_7.setContentsMargins(0, 0, 0, 0)
         self.rbVoltage = QRadioButton(self.layoutWidget5)
         self.rbVoltage.setObjectName(u"rbVoltage")
-        sizePolicy4 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        sizePolicy4.setHorizontalStretch(0)
-        sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.rbVoltage.sizePolicy().hasHeightForWidth())
-        self.rbVoltage.setSizePolicy(sizePolicy4)
+        sizePolicy3 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.rbVoltage.sizePolicy().hasHeightForWidth())
+        self.rbVoltage.setSizePolicy(sizePolicy3)
         self.rbVoltage.setChecked(True)
 
         self.gridLayout_7.addWidget(self.rbVoltage, 0, 0, 1, 1)
@@ -479,8 +476,8 @@ class Ui_MainWindow(object):
 
         self.rbAdc = QRadioButton(self.layoutWidget5)
         self.rbAdc.setObjectName(u"rbAdc")
-        sizePolicy4.setHeightForWidth(self.rbAdc.sizePolicy().hasHeightForWidth())
-        self.rbAdc.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.rbAdc.sizePolicy().hasHeightForWidth())
+        self.rbAdc.setSizePolicy(sizePolicy3)
 
         self.gridLayout_7.addWidget(self.rbAdc, 1, 0, 1, 1)
 
@@ -585,8 +582,8 @@ class Ui_MainWindow(object):
         self.cbTimFrqUnit.addItem("")
         self.cbTimFrqUnit.addItem("")
         self.cbTimFrqUnit.setObjectName(u"cbTimFrqUnit")
-        sizePolicy4.setHeightForWidth(self.cbTimFrqUnit.sizePolicy().hasHeightForWidth())
-        self.cbTimFrqUnit.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.cbTimFrqUnit.sizePolicy().hasHeightForWidth())
+        self.cbTimFrqUnit.setSizePolicy(sizePolicy3)
         self.cbTimFrqUnit.setMaximumSize(QSize(60, 16777215))
         self.cbTimFrqUnit.setFont(font)
 
@@ -598,8 +595,8 @@ class Ui_MainWindow(object):
         self.cbTimTimeUnit.addItem("")
         self.cbTimTimeUnit.addItem("")
         self.cbTimTimeUnit.setObjectName(u"cbTimTimeUnit")
-        sizePolicy4.setHeightForWidth(self.cbTimTimeUnit.sizePolicy().hasHeightForWidth())
-        self.cbTimTimeUnit.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.cbTimTimeUnit.sizePolicy().hasHeightForWidth())
+        self.cbTimTimeUnit.setSizePolicy(sizePolicy3)
         self.cbTimTimeUnit.setMaximumSize(QSize(60, 16777215))
         self.cbTimTimeUnit.setFont(font)
 
@@ -621,11 +618,11 @@ class Ui_MainWindow(object):
         self.tblTim.setHorizontalHeaderItem(1, __qtablewidgetitem6)
         self.tblTim.setObjectName(u"tblTim")
         self.tblTim.setGeometry(QRect(10, 250, 386, 181))
-        sizePolicy5 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-        sizePolicy5.setHorizontalStretch(0)
-        sizePolicy5.setVerticalStretch(0)
-        sizePolicy5.setHeightForWidth(self.tblTim.sizePolicy().hasHeightForWidth())
-        self.tblTim.setSizePolicy(sizePolicy5)
+        sizePolicy4 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.tblTim.sizePolicy().hasHeightForWidth())
+        self.tblTim.setSizePolicy(sizePolicy4)
         self.tblTim.setFrameShape(QFrame.StyledPanel)
         self.tblTim.setFrameShadow(QFrame.Sunken)
         self.tblTim.setSizeAdjustPolicy(QAbstractScrollArea.AdjustIgnored)
@@ -740,7 +737,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         self.tabWidget.setCurrentIndex(1)
-        self.tabWidget_2.setCurrentIndex(2)
+        self.tabWidget_2.setCurrentIndex(0)
         self.tabWidget_3.setCurrentIndex(0)
 
 
@@ -785,8 +782,8 @@ class Ui_MainWindow(object):
         self.label_25.setText(QCoreApplication.translate("MainWindow", u"V", None))
         self.label_27.setText(QCoreApplication.translate("MainWindow", u"ADC to Voltage", None))
         self.label_26.setText(QCoreApplication.translate("MainWindow", u"V", None))
+        self.label_32.setText("")
         self.label_24.setText(QCoreApplication.translate("MainWindow", u"Voltage to ADC", None))
-        self.label_28.setText("")
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"Resolution", None))
         self.etAdcResolution.setText("")
         self.label_14.setText(QCoreApplication.translate("MainWindow", u"bit", None))
