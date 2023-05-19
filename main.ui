@@ -29,7 +29,7 @@
        </font>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -44,6 +44,12 @@
           <height>22</height>
          </rect>
         </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="font">
          <font>
           <pointsize>10</pointsize>
@@ -54,9 +60,9 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>281</y>
+          <y>301</y>
           <width>411</width>
-          <height>211</height>
+          <height>191</height>
          </rect>
         </property>
         <property name="frameShape">
@@ -165,13 +171,135 @@
           <x>10</x>
           <y>40</y>
           <width>131</width>
-          <height>254</height>
+          <height>251</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout">
          <property name="sizeConstraint">
           <enum>QLayout::SetFixedSize</enum>
          </property>
+         <property name="topMargin">
+          <number>5</number>
+         </property>
+         <property name="bottomMargin">
+          <number>5</number>
+         </property>
+         <property name="horizontalSpacing">
+          <number>5</number>
+         </property>
+         <property name="verticalSpacing">
+          <number>7</number>
+         </property>
+         <item row="5" column="0">
+          <widget class="QLabel" name="label_6">
+           <property name="maximumSize">
+            <size>
+             <width>40</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Error</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="2">
+          <widget class="QLabel" name="label_11">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>V</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QLineEdit" name="etError">
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QLineEdit" name="etVol">
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="maximumSize">
+            <size>
+             <width>40</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>VOL</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0" colspan="2">
+          <widget class="QPushButton" name="pushButton">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Calculate</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="2">
+          <widget class="QLabel" name="label_12">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>%</string>
+           </property>
+          </widget>
+         </item>
          <item row="0" column="0">
           <widget class="QLabel" name="label">
            <property name="maximumSize">
@@ -187,6 +315,18 @@
            </property>
            <property name="text">
             <string>VH</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="label_7">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>V</string>
            </property>
           </widget>
          </item>
@@ -214,18 +354,6 @@
            </property>
           </widget>
          </item>
-         <item row="0" column="2">
-          <widget class="QLabel" name="label_7">
-           <property name="font">
-            <font>
-             <pointsize>10</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>V</string>
-           </property>
-          </widget>
-         </item>
          <item row="1" column="0">
           <widget class="QLabel" name="label_2">
            <property name="maximumSize">
@@ -244,36 +372,6 @@
            </property>
           </widget>
          </item>
-         <item row="1" column="1">
-          <widget class="QLineEdit" name="etVl">
-           <property name="maximumSize">
-            <size>
-             <width>60</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <pointsize>12</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="2">
-          <widget class="QLabel" name="label_8">
-           <property name="font">
-            <font>
-             <pointsize>10</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>V</string>
-           </property>
-          </widget>
-         </item>
          <item row="2" column="0">
           <widget class="QLabel" name="label_3">
            <property name="maximumSize">
@@ -289,6 +387,36 @@
            </property>
            <property name="text">
             <string>Vref</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLabel" name="label_8">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>V</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="etVl">
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string/>
            </property>
           </widget>
          </item>
@@ -312,6 +440,18 @@
          </item>
          <item row="2" column="2">
           <widget class="QLabel" name="label_9">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>V</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2">
+          <widget class="QLabel" name="label_10">
            <property name="font">
             <font>
              <pointsize>10</pointsize>
@@ -358,128 +498,6 @@
            </property>
           </widget>
          </item>
-         <item row="3" column="2">
-          <widget class="QLabel" name="label_10">
-           <property name="font">
-            <font>
-             <pointsize>10</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>V</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="0">
-          <widget class="QLabel" name="label_5">
-           <property name="maximumSize">
-            <size>
-             <width>40</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <pointsize>11</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>VOL</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="1">
-          <widget class="QLineEdit" name="etVol">
-           <property name="maximumSize">
-            <size>
-             <width>60</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <pointsize>12</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="2">
-          <widget class="QLabel" name="label_11">
-           <property name="font">
-            <font>
-             <pointsize>10</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>V</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="0">
-          <widget class="QLabel" name="label_6">
-           <property name="maximumSize">
-            <size>
-             <width>40</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <pointsize>11</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>Error</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="1">
-          <widget class="QLineEdit" name="etError">
-           <property name="maximumSize">
-            <size>
-             <width>60</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <pointsize>12</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="2">
-          <widget class="QLabel" name="label_12">
-           <property name="font">
-            <font>
-             <pointsize>10</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>%</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="0" colspan="2">
-          <widget class="QPushButton" name="pushButton">
-           <property name="font">
-            <font>
-             <pointsize>10</pointsize>
-             <weight>50</weight>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>Calculate</string>
-           </property>
-          </widget>
-         </item>
         </layout>
        </widget>
        <widget class="QLabel" name="lblImg">
@@ -488,7 +506,7 @@
           <x>160</x>
           <y>10</y>
           <width>261</width>
-          <height>261</height>
+          <height>281</height>
          </rect>
         </property>
         <property name="frameShape">
@@ -530,7 +548,7 @@
          </font>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab_3">
          <property name="font">
@@ -574,6 +592,12 @@
           <layout class="QGridLayout" name="gridLayout_3">
            <item row="0" column="0">
             <widget class="QLabel" name="label_22">
+             <property name="maximumSize">
+              <size>
+               <width>200</width>
+               <height>16777215</height>
+              </size>
+             </property>
              <property name="font">
               <font>
                <pointsize>11</pointsize>
@@ -586,6 +610,12 @@
            </item>
            <item row="0" column="1">
             <widget class="QLCDNumber" name="lcdResolution">
+             <property name="maximumSize">
+              <size>
+               <width>200</width>
+               <height>16777215</height>
+              </size>
+             </property>
              <property name="lineWidth">
               <number>1</number>
              </property>
@@ -604,6 +634,18 @@
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>30</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>30</width>
+               <height>16777215</height>
+              </size>
              </property>
              <property name="font">
               <font>
@@ -629,6 +671,12 @@
           <layout class="QGridLayout" name="gridLayout_4">
            <item row="0" column="0">
             <widget class="QLabel" name="label_27">
+             <property name="maximumSize">
+              <size>
+               <width>200</width>
+               <height>16777215</height>
+              </size>
+             </property>
              <property name="font">
               <font>
                <pointsize>11</pointsize>
@@ -641,6 +689,12 @@
            </item>
            <item row="0" column="1">
             <widget class="QLCDNumber" name="lcdVoltage">
+             <property name="maximumSize">
+              <size>
+               <width>200</width>
+               <height>16777215</height>
+              </size>
+             </property>
              <property name="styleSheet">
               <string notr="true">QLCDNumber:disabled {
  color:#010101;
@@ -659,6 +713,18 @@ background-color:#555555;
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>30</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>30</width>
+               <height>16777215</height>
+              </size>
              </property>
              <property name="font">
               <font>
@@ -684,6 +750,12 @@ background-color:#555555;
           <layout class="QGridLayout" name="gridLayout_5">
            <item row="0" column="1">
             <widget class="QLCDNumber" name="lcdAdc">
+             <property name="maximumSize">
+              <size>
+               <width>200</width>
+               <height>16777215</height>
+              </size>
+             </property>
              <property name="styleSheet">
               <string notr="true">QLCDNumber:disabled {
  color:#010101;
@@ -695,6 +767,24 @@ background-color:#555555;
              </property>
             </widget>
            </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_24">
+             <property name="maximumSize">
+              <size>
+               <width>200</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>11</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Voltage to ADC</string>
+             </property>
+            </widget>
+           </item>
            <item row="0" column="2">
             <widget class="QLabel" name="label_32">
              <property name="sizePolicy">
@@ -703,25 +793,25 @@ background-color:#555555;
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
+             <property name="minimumSize">
+              <size>
+               <width>30</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>30</width>
+               <height>16777215</height>
+              </size>
+             </property>
              <property name="font">
               <font>
                <pointsize>10</pointsize>
               </font>
              </property>
              <property name="text">
-              <string>  </string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_24">
-             <property name="font">
-              <font>
-               <pointsize>11</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Voltage to ADC</string>
+              <string/>
              </property>
             </widget>
            </item>
@@ -1105,11 +1195,6 @@ background-color:#555555;
           </layout>
          </widget>
         </widget>
-        <widget class="QWidget" name="tab_4">
-         <attribute name="title">
-          <string>USART</string>
-         </attribute>
-        </widget>
         <widget class="QWidget" name="tab_5">
          <attribute name="title">
           <string>TIMER</string>
@@ -1119,7 +1204,7 @@ background-color:#555555;
            <rect>
             <x>10</x>
             <y>30</y>
-            <width>243</width>
+            <width>296</width>
             <height>143</height>
            </rect>
           </property>
@@ -1131,6 +1216,12 @@ background-color:#555555;
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>0</height>
+              </size>
              </property>
              <property name="maximumSize">
               <size>
@@ -1174,6 +1265,12 @@ background-color:#555555;
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>0</height>
+              </size>
+             </property>
              <property name="maximumSize">
               <size>
                <width>80</width>
@@ -1194,6 +1291,12 @@ background-color:#555555;
             <widget class="QLabel" name="label_35">
              <property name="enabled">
               <bool>true</bool>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>0</height>
+              </size>
              </property>
              <property name="maximumSize">
               <size>
@@ -1219,6 +1322,12 @@ background-color:#555555;
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>0</height>
+              </size>
+             </property>
              <property name="maximumSize">
               <size>
                <width>80</width>
@@ -1240,6 +1349,12 @@ background-color:#555555;
              <property name="enabled">
               <bool>true</bool>
              </property>
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>0</height>
+              </size>
+             </property>
              <property name="maximumSize">
               <size>
                <width>100</width>
@@ -1260,6 +1375,12 @@ background-color:#555555;
             <widget class="QLabel" name="label_31">
              <property name="enabled">
               <bool>true</bool>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>0</height>
+              </size>
              </property>
              <property name="maximumSize">
               <size>
@@ -1284,6 +1405,12 @@ background-color:#555555;
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>80</width>
+               <height>0</height>
+              </size>
              </property>
              <property name="maximumSize">
               <size>
@@ -1320,6 +1447,12 @@ background-color:#555555;
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>80</width>
+               <height>0</height>
+              </size>
              </property>
              <property name="maximumSize">
               <size>
@@ -1688,6 +1821,34 @@ background-color:#555555;
         </layout>
        </widget>
       </widget>
+      <widget class="QWidget" name="tab_4">
+       <attribute name="title">
+        <string>Filter</string>
+       </attribute>
+       <widget class="QTabWidget" name="tabWidget_4">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>411</width>
+          <height>491</height>
+         </rect>
+        </property>
+        <property name="currentIndex">
+         <number>1</number>
+        </property>
+        <widget class="QWidget" name="tab_9">
+         <attribute name="title">
+          <string>Active</string>
+         </attribute>
+        </widget>
+        <widget class="QWidget" name="tab_10">
+         <attribute name="title">
+          <string>Passive</string>
+         </attribute>
+        </widget>
+       </widget>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -1698,7 +1859,7 @@ background-color:#555555;
      <x>0</x>
      <y>0</y>
      <width>450</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

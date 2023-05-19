@@ -45,6 +45,11 @@ class Ui_MainWindow(object):
         self.cbStandards = QComboBox(self.tab)
         self.cbStandards.setObjectName(u"cbStandards")
         self.cbStandards.setGeometry(QRect(10, 10, 107, 22))
+        sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.cbStandards.sizePolicy().hasHeightForWidth())
+        self.cbStandards.setSizePolicy(sizePolicy)
         self.cbStandards.setFont(font)
         self.tableWidget = QTableWidget(self.tab)
         if (self.tableWidget.columnCount() < 5):
@@ -68,7 +73,7 @@ class Ui_MainWindow(object):
         __qtablewidgetitem4.setFont(font1);
         self.tableWidget.setHorizontalHeaderItem(4, __qtablewidgetitem4)
         self.tableWidget.setObjectName(u"tableWidget")
-        self.tableWidget.setGeometry(QRect(10, 281, 411, 211))
+        self.tableWidget.setGeometry(QRect(10, 301, 411, 191))
         self.tableWidget.setFrameShape(QFrame.StyledPanel)
         self.tableWidget.setFrameShadow(QFrame.Sunken)
         self.tableWidget.setSizeAdjustPolicy(QAbstractScrollArea.AdjustIgnored)
@@ -84,39 +89,90 @@ class Ui_MainWindow(object):
         self.tableWidget.verticalHeader().setStretchLastSection(False)
         self.layoutWidget = QWidget(self.tab)
         self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(10, 40, 131, 254))
+        self.layoutWidget.setGeometry(QRect(10, 40, 131, 251))
         self.gridLayout = QGridLayout(self.layoutWidget)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setSizeConstraint(QLayout.SetFixedSize)
-        self.gridLayout.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout.setHorizontalSpacing(5)
+        self.gridLayout.setVerticalSpacing(7)
+        self.gridLayout.setContentsMargins(0, 5, 0, 5)
+        self.label_6 = QLabel(self.layoutWidget)
+        self.label_6.setObjectName(u"label_6")
+        self.label_6.setMaximumSize(QSize(40, 16777215))
+        font2 = QFont()
+        font2.setPointSize(11)
+        self.label_6.setFont(font2)
+
+        self.gridLayout.addWidget(self.label_6, 5, 0, 1, 1)
+
+        self.label_11 = QLabel(self.layoutWidget)
+        self.label_11.setObjectName(u"label_11")
+        self.label_11.setFont(font)
+
+        self.gridLayout.addWidget(self.label_11, 4, 2, 1, 1)
+
+        self.etError = QLineEdit(self.layoutWidget)
+        self.etError.setObjectName(u"etError")
+        self.etError.setMaximumSize(QSize(60, 16777215))
+        font3 = QFont()
+        font3.setPointSize(12)
+        self.etError.setFont(font3)
+
+        self.gridLayout.addWidget(self.etError, 5, 1, 1, 1)
+
+        self.etVol = QLineEdit(self.layoutWidget)
+        self.etVol.setObjectName(u"etVol")
+        self.etVol.setMaximumSize(QSize(60, 16777215))
+        self.etVol.setFont(font3)
+
+        self.gridLayout.addWidget(self.etVol, 4, 1, 1, 1)
+
+        self.label_5 = QLabel(self.layoutWidget)
+        self.label_5.setObjectName(u"label_5")
+        self.label_5.setMaximumSize(QSize(40, 16777215))
+        self.label_5.setFont(font2)
+
+        self.gridLayout.addWidget(self.label_5, 4, 0, 1, 1)
+
+        self.pushButton = QPushButton(self.layoutWidget)
+        self.pushButton.setObjectName(u"pushButton")
+        font4 = QFont()
+        font4.setPointSize(10)
+        font4.setBold(False)
+        self.pushButton.setFont(font4)
+
+        self.gridLayout.addWidget(self.pushButton, 6, 0, 1, 2)
+
+        self.label_12 = QLabel(self.layoutWidget)
+        self.label_12.setObjectName(u"label_12")
+        self.label_12.setFont(font)
+
+        self.gridLayout.addWidget(self.label_12, 5, 2, 1, 1)
+
         self.label = QLabel(self.layoutWidget)
         self.label.setObjectName(u"label")
         self.label.setMaximumSize(QSize(40, 16777215))
-        font2 = QFont()
-        font2.setPointSize(11)
         self.label.setFont(font2)
 
         self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
-
-        self.etVh = QLineEdit(self.layoutWidget)
-        self.etVh.setObjectName(u"etVh")
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.etVh.sizePolicy().hasHeightForWidth())
-        self.etVh.setSizePolicy(sizePolicy)
-        self.etVh.setMaximumSize(QSize(60, 16777215))
-        font3 = QFont()
-        font3.setPointSize(12)
-        self.etVh.setFont(font3)
-
-        self.gridLayout.addWidget(self.etVh, 0, 1, 1, 1)
 
         self.label_7 = QLabel(self.layoutWidget)
         self.label_7.setObjectName(u"label_7")
         self.label_7.setFont(font)
 
         self.gridLayout.addWidget(self.label_7, 0, 2, 1, 1)
+
+        self.etVh = QLineEdit(self.layoutWidget)
+        self.etVh.setObjectName(u"etVh")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.etVh.sizePolicy().hasHeightForWidth())
+        self.etVh.setSizePolicy(sizePolicy1)
+        self.etVh.setMaximumSize(QSize(60, 16777215))
+        self.etVh.setFont(font3)
+
+        self.gridLayout.addWidget(self.etVh, 0, 1, 1, 1)
 
         self.label_2 = QLabel(self.layoutWidget)
         self.label_2.setObjectName(u"label_2")
@@ -125,12 +181,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.label_2, 1, 0, 1, 1)
 
-        self.etVl = QLineEdit(self.layoutWidget)
-        self.etVl.setObjectName(u"etVl")
-        self.etVl.setMaximumSize(QSize(60, 16777215))
-        self.etVl.setFont(font3)
+        self.label_3 = QLabel(self.layoutWidget)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setMaximumSize(QSize(40, 16777215))
+        self.label_3.setFont(font2)
 
-        self.gridLayout.addWidget(self.etVl, 1, 1, 1, 1)
+        self.gridLayout.addWidget(self.label_3, 2, 0, 1, 1)
 
         self.label_8 = QLabel(self.layoutWidget)
         self.label_8.setObjectName(u"label_8")
@@ -138,12 +194,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.label_8, 1, 2, 1, 1)
 
-        self.label_3 = QLabel(self.layoutWidget)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setMaximumSize(QSize(40, 16777215))
-        self.label_3.setFont(font2)
+        self.etVl = QLineEdit(self.layoutWidget)
+        self.etVl.setObjectName(u"etVl")
+        self.etVl.setMaximumSize(QSize(60, 16777215))
+        self.etVl.setFont(font3)
 
-        self.gridLayout.addWidget(self.label_3, 2, 0, 1, 1)
+        self.gridLayout.addWidget(self.etVl, 1, 1, 1, 1)
 
         self.etVref = QLineEdit(self.layoutWidget)
         self.etVref.setObjectName(u"etVref")
@@ -157,6 +213,12 @@ class Ui_MainWindow(object):
         self.label_9.setFont(font)
 
         self.gridLayout.addWidget(self.label_9, 2, 2, 1, 1)
+
+        self.label_10 = QLabel(self.layoutWidget)
+        self.label_10.setObjectName(u"label_10")
+        self.label_10.setFont(font)
+
+        self.gridLayout.addWidget(self.label_10, 3, 2, 1, 1)
 
         self.label_4 = QLabel(self.layoutWidget)
         self.label_4.setObjectName(u"label_4")
@@ -172,64 +234,9 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.etVoh, 3, 1, 1, 1)
 
-        self.label_10 = QLabel(self.layoutWidget)
-        self.label_10.setObjectName(u"label_10")
-        self.label_10.setFont(font)
-
-        self.gridLayout.addWidget(self.label_10, 3, 2, 1, 1)
-
-        self.label_5 = QLabel(self.layoutWidget)
-        self.label_5.setObjectName(u"label_5")
-        self.label_5.setMaximumSize(QSize(40, 16777215))
-        self.label_5.setFont(font2)
-
-        self.gridLayout.addWidget(self.label_5, 4, 0, 1, 1)
-
-        self.etVol = QLineEdit(self.layoutWidget)
-        self.etVol.setObjectName(u"etVol")
-        self.etVol.setMaximumSize(QSize(60, 16777215))
-        self.etVol.setFont(font3)
-
-        self.gridLayout.addWidget(self.etVol, 4, 1, 1, 1)
-
-        self.label_11 = QLabel(self.layoutWidget)
-        self.label_11.setObjectName(u"label_11")
-        self.label_11.setFont(font)
-
-        self.gridLayout.addWidget(self.label_11, 4, 2, 1, 1)
-
-        self.label_6 = QLabel(self.layoutWidget)
-        self.label_6.setObjectName(u"label_6")
-        self.label_6.setMaximumSize(QSize(40, 16777215))
-        self.label_6.setFont(font2)
-
-        self.gridLayout.addWidget(self.label_6, 5, 0, 1, 1)
-
-        self.etError = QLineEdit(self.layoutWidget)
-        self.etError.setObjectName(u"etError")
-        self.etError.setMaximumSize(QSize(60, 16777215))
-        self.etError.setFont(font3)
-
-        self.gridLayout.addWidget(self.etError, 5, 1, 1, 1)
-
-        self.label_12 = QLabel(self.layoutWidget)
-        self.label_12.setObjectName(u"label_12")
-        self.label_12.setFont(font)
-
-        self.gridLayout.addWidget(self.label_12, 5, 2, 1, 1)
-
-        self.pushButton = QPushButton(self.layoutWidget)
-        self.pushButton.setObjectName(u"pushButton")
-        font4 = QFont()
-        font4.setPointSize(10)
-        font4.setBold(False)
-        self.pushButton.setFont(font4)
-
-        self.gridLayout.addWidget(self.pushButton, 6, 0, 1, 2)
-
         self.lblImg = QLabel(self.tab)
         self.lblImg.setObjectName(u"lblImg")
-        self.lblImg.setGeometry(QRect(160, 10, 261, 261))
+        self.lblImg.setGeometry(QRect(160, 10, 261, 281))
         self.lblImg.setFrameShape(QFrame.StyledPanel)
         self.lblImg.setScaledContents(True)
         self.lblImg.setAlignment(Qt.AlignCenter)
@@ -239,11 +246,11 @@ class Ui_MainWindow(object):
         self.tabWidget_2 = QTabWidget(self.tab_2)
         self.tabWidget_2.setObjectName(u"tabWidget_2")
         self.tabWidget_2.setGeometry(QRect(10, 0, 411, 481))
-        sizePolicy1 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.tabWidget_2.sizePolicy().hasHeightForWidth())
-        self.tabWidget_2.setSizePolicy(sizePolicy1)
+        sizePolicy2 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.tabWidget_2.sizePolicy().hasHeightForWidth())
+        self.tabWidget_2.setSizePolicy(sizePolicy2)
         font5 = QFont()
         font5.setPointSize(9)
         self.tabWidget_2.setFont(font5)
@@ -265,12 +272,14 @@ class Ui_MainWindow(object):
         self.gridLayout_3.setContentsMargins(0, 0, 0, 0)
         self.label_22 = QLabel(self.layoutWidget1)
         self.label_22.setObjectName(u"label_22")
+        self.label_22.setMaximumSize(QSize(200, 16777215))
         self.label_22.setFont(font2)
 
         self.gridLayout_3.addWidget(self.label_22, 0, 0, 1, 1)
 
         self.lcdResolution = QLCDNumber(self.layoutWidget1)
         self.lcdResolution.setObjectName(u"lcdResolution")
+        self.lcdResolution.setMaximumSize(QSize(200, 16777215))
         self.lcdResolution.setLineWidth(1)
         self.lcdResolution.setDigitCount(10)
         self.lcdResolution.setSegmentStyle(QLCDNumber.Filled)
@@ -279,11 +288,13 @@ class Ui_MainWindow(object):
 
         self.label_25 = QLabel(self.layoutWidget1)
         self.label_25.setObjectName(u"label_25")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
-        sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.label_25.sizePolicy().hasHeightForWidth())
-        self.label_25.setSizePolicy(sizePolicy2)
+        sizePolicy3 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.label_25.sizePolicy().hasHeightForWidth())
+        self.label_25.setSizePolicy(sizePolicy3)
+        self.label_25.setMinimumSize(QSize(30, 0))
+        self.label_25.setMaximumSize(QSize(30, 16777215))
         self.label_25.setFont(font)
 
         self.gridLayout_3.addWidget(self.label_25, 0, 2, 1, 1)
@@ -296,12 +307,14 @@ class Ui_MainWindow(object):
         self.gridLayout_4.setContentsMargins(0, 0, 0, 0)
         self.label_27 = QLabel(self.layoutWidget2)
         self.label_27.setObjectName(u"label_27")
+        self.label_27.setMaximumSize(QSize(200, 16777215))
         self.label_27.setFont(font2)
 
         self.gridLayout_4.addWidget(self.label_27, 0, 0, 1, 1)
 
         self.lcdVoltage = QLCDNumber(self.layoutWidget2)
         self.lcdVoltage.setObjectName(u"lcdVoltage")
+        self.lcdVoltage.setMaximumSize(QSize(200, 16777215))
         self.lcdVoltage.setStyleSheet(u"QLCDNumber:disabled {\n"
 " color:#010101;\n"
 "background-color:#555555;\n"
@@ -312,8 +325,10 @@ class Ui_MainWindow(object):
 
         self.label_26 = QLabel(self.layoutWidget2)
         self.label_26.setObjectName(u"label_26")
-        sizePolicy2.setHeightForWidth(self.label_26.sizePolicy().hasHeightForWidth())
-        self.label_26.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_26.sizePolicy().hasHeightForWidth())
+        self.label_26.setSizePolicy(sizePolicy3)
+        self.label_26.setMinimumSize(QSize(30, 0))
+        self.label_26.setMaximumSize(QSize(30, 16777215))
         self.label_26.setFont(font)
 
         self.gridLayout_4.addWidget(self.label_26, 0, 2, 1, 1)
@@ -326,6 +341,7 @@ class Ui_MainWindow(object):
         self.gridLayout_5.setContentsMargins(0, 0, 0, 0)
         self.lcdAdc = QLCDNumber(self.layoutWidget3)
         self.lcdAdc.setObjectName(u"lcdAdc")
+        self.lcdAdc.setMaximumSize(QSize(200, 16777215))
         self.lcdAdc.setStyleSheet(u"QLCDNumber:disabled {\n"
 " color:#010101;\n"
 "background-color:#555555;\n"
@@ -334,19 +350,22 @@ class Ui_MainWindow(object):
 
         self.gridLayout_5.addWidget(self.lcdAdc, 0, 1, 1, 1)
 
-        self.label_32 = QLabel(self.layoutWidget3)
-        self.label_32.setObjectName(u"label_32")
-        sizePolicy2.setHeightForWidth(self.label_32.sizePolicy().hasHeightForWidth())
-        self.label_32.setSizePolicy(sizePolicy2)
-        self.label_32.setFont(font)
-
-        self.gridLayout_5.addWidget(self.label_32, 0, 2, 1, 1)
-
         self.label_24 = QLabel(self.layoutWidget3)
         self.label_24.setObjectName(u"label_24")
+        self.label_24.setMaximumSize(QSize(200, 16777215))
         self.label_24.setFont(font2)
 
         self.gridLayout_5.addWidget(self.label_24, 0, 0, 1, 1)
+
+        self.label_32 = QLabel(self.layoutWidget3)
+        self.label_32.setObjectName(u"label_32")
+        sizePolicy3.setHeightForWidth(self.label_32.sizePolicy().hasHeightForWidth())
+        self.label_32.setSizePolicy(sizePolicy3)
+        self.label_32.setMinimumSize(QSize(30, 0))
+        self.label_32.setMaximumSize(QSize(30, 16777215))
+        self.label_32.setFont(font)
+
+        self.gridLayout_5.addWidget(self.label_32, 0, 2, 1, 1)
 
         self.layoutWidget4 = QWidget(self.tab_3)
         self.layoutWidget4.setObjectName(u"layoutWidget4")
@@ -364,8 +383,8 @@ class Ui_MainWindow(object):
 
         self.etAdcResolution = QLineEdit(self.layoutWidget4)
         self.etAdcResolution.setObjectName(u"etAdcResolution")
-        sizePolicy.setHeightForWidth(self.etAdcResolution.sizePolicy().hasHeightForWidth())
-        self.etAdcResolution.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.etAdcResolution.sizePolicy().hasHeightForWidth())
+        self.etAdcResolution.setSizePolicy(sizePolicy1)
         self.etAdcResolution.setMaximumSize(QSize(60, 16777215))
         self.etAdcResolution.setFont(font3)
 
@@ -387,8 +406,8 @@ class Ui_MainWindow(object):
 
         self.etAdcVref = QLineEdit(self.layoutWidget4)
         self.etAdcVref.setObjectName(u"etAdcVref")
-        sizePolicy.setHeightForWidth(self.etAdcVref.sizePolicy().hasHeightForWidth())
-        self.etAdcVref.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.etAdcVref.sizePolicy().hasHeightForWidth())
+        self.etAdcVref.setSizePolicy(sizePolicy1)
         self.etAdcVref.setMaximumSize(QSize(60, 16777215))
         self.etAdcVref.setFont(font3)
 
@@ -410,8 +429,8 @@ class Ui_MainWindow(object):
 
         self.etAdcOffset = QLineEdit(self.layoutWidget4)
         self.etAdcOffset.setObjectName(u"etAdcOffset")
-        sizePolicy.setHeightForWidth(self.etAdcOffset.sizePolicy().hasHeightForWidth())
-        self.etAdcOffset.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.etAdcOffset.sizePolicy().hasHeightForWidth())
+        self.etAdcOffset.setSizePolicy(sizePolicy1)
         self.etAdcOffset.setMaximumSize(QSize(60, 16777215))
         self.etAdcOffset.setFont(font3)
 
@@ -433,8 +452,8 @@ class Ui_MainWindow(object):
 
         self.etAdcGain = QLineEdit(self.layoutWidget4)
         self.etAdcGain.setObjectName(u"etAdcGain")
-        sizePolicy.setHeightForWidth(self.etAdcGain.sizePolicy().hasHeightForWidth())
-        self.etAdcGain.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.etAdcGain.sizePolicy().hasHeightForWidth())
+        self.etAdcGain.setSizePolicy(sizePolicy1)
         self.etAdcGain.setMaximumSize(QSize(60, 16777215))
         self.etAdcGain.setFont(font3)
 
@@ -448,19 +467,16 @@ class Ui_MainWindow(object):
         self.gridLayout_7.setContentsMargins(0, 0, 0, 0)
         self.rbVoltage = QRadioButton(self.layoutWidget5)
         self.rbVoltage.setObjectName(u"rbVoltage")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.rbVoltage.sizePolicy().hasHeightForWidth())
-        self.rbVoltage.setSizePolicy(sizePolicy3)
+        sizePolicy.setHeightForWidth(self.rbVoltage.sizePolicy().hasHeightForWidth())
+        self.rbVoltage.setSizePolicy(sizePolicy)
         self.rbVoltage.setChecked(True)
 
         self.gridLayout_7.addWidget(self.rbVoltage, 0, 0, 1, 1)
 
         self.etAdcAdc = QLineEdit(self.layoutWidget5)
         self.etAdcAdc.setObjectName(u"etAdcAdc")
-        sizePolicy.setHeightForWidth(self.etAdcAdc.sizePolicy().hasHeightForWidth())
-        self.etAdcAdc.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.etAdcAdc.sizePolicy().hasHeightForWidth())
+        self.etAdcAdc.setSizePolicy(sizePolicy1)
         self.etAdcAdc.setMaximumSize(QSize(60, 16777215))
         self.etAdcAdc.setFont(font3)
 
@@ -468,16 +484,16 @@ class Ui_MainWindow(object):
 
         self.label_21 = QLabel(self.layoutWidget5)
         self.label_21.setObjectName(u"label_21")
-        sizePolicy2.setHeightForWidth(self.label_21.sizePolicy().hasHeightForWidth())
-        self.label_21.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_21.sizePolicy().hasHeightForWidth())
+        self.label_21.setSizePolicy(sizePolicy3)
         self.label_21.setFont(font)
 
         self.gridLayout_7.addWidget(self.label_21, 0, 3, 1, 1)
 
         self.rbAdc = QRadioButton(self.layoutWidget5)
         self.rbAdc.setObjectName(u"rbAdc")
-        sizePolicy3.setHeightForWidth(self.rbAdc.sizePolicy().hasHeightForWidth())
-        self.rbAdc.setSizePolicy(sizePolicy3)
+        sizePolicy.setHeightForWidth(self.rbAdc.sizePolicy().hasHeightForWidth())
+        self.rbAdc.setSizePolicy(sizePolicy)
 
         self.gridLayout_7.addWidget(self.rbAdc, 1, 0, 1, 1)
 
@@ -499,8 +515,8 @@ class Ui_MainWindow(object):
 
         self.etAdcVoltage = QLineEdit(self.layoutWidget5)
         self.etAdcVoltage.setObjectName(u"etAdcVoltage")
-        sizePolicy.setHeightForWidth(self.etAdcVoltage.sizePolicy().hasHeightForWidth())
-        self.etAdcVoltage.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.etAdcVoltage.sizePolicy().hasHeightForWidth())
+        self.etAdcVoltage.setSizePolicy(sizePolicy1)
         self.etAdcVoltage.setMaximumSize(QSize(60, 16777215))
         self.etAdcVoltage.setFont(font3)
 
@@ -511,14 +527,15 @@ class Ui_MainWindow(object):
         self.tab_5.setObjectName(u"tab_5")
         self.layoutWidget_2 = QWidget(self.tab_5)
         self.layoutWidget_2.setObjectName(u"layoutWidget_2")
-        self.layoutWidget_2.setGeometry(QRect(10, 30, 243, 143))
+        self.layoutWidget_2.setGeometry(QRect(10, 30, 296, 143))
         self.gridLayout_9 = QGridLayout(self.layoutWidget_2)
         self.gridLayout_9.setObjectName(u"gridLayout_9")
         self.gridLayout_9.setContentsMargins(0, 0, 0, 0)
         self.etTimError = QLineEdit(self.layoutWidget_2)
         self.etTimError.setObjectName(u"etTimError")
-        sizePolicy.setHeightForWidth(self.etTimError.sizePolicy().hasHeightForWidth())
-        self.etTimError.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.etTimError.sizePolicy().hasHeightForWidth())
+        self.etTimError.setSizePolicy(sizePolicy1)
+        self.etTimError.setMinimumSize(QSize(100, 0))
         self.etTimError.setMaximumSize(QSize(80, 16777215))
         self.etTimError.setFont(font3)
 
@@ -526,16 +543,17 @@ class Ui_MainWindow(object):
 
         self.label_36 = QLabel(self.layoutWidget_2)
         self.label_36.setObjectName(u"label_36")
-        sizePolicy2.setHeightForWidth(self.label_36.sizePolicy().hasHeightForWidth())
-        self.label_36.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_36.sizePolicy().hasHeightForWidth())
+        self.label_36.setSizePolicy(sizePolicy3)
         self.label_36.setFont(font)
 
         self.gridLayout_9.addWidget(self.label_36, 2, 2, 1, 1)
 
         self.etTimTime = QLineEdit(self.layoutWidget_2)
         self.etTimTime.setObjectName(u"etTimTime")
-        sizePolicy.setHeightForWidth(self.etTimTime.sizePolicy().hasHeightForWidth())
-        self.etTimTime.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.etTimTime.sizePolicy().hasHeightForWidth())
+        self.etTimTime.setSizePolicy(sizePolicy1)
+        self.etTimTime.setMinimumSize(QSize(100, 0))
         self.etTimTime.setMaximumSize(QSize(80, 16777215))
         self.etTimTime.setFont(font3)
 
@@ -544,6 +562,7 @@ class Ui_MainWindow(object):
         self.label_35 = QLabel(self.layoutWidget_2)
         self.label_35.setObjectName(u"label_35")
         self.label_35.setEnabled(True)
+        self.label_35.setMinimumSize(QSize(100, 0))
         self.label_35.setMaximumSize(QSize(100, 16777215))
         self.label_35.setFont(font2)
 
@@ -551,8 +570,9 @@ class Ui_MainWindow(object):
 
         self.etTimFrq = QLineEdit(self.layoutWidget_2)
         self.etTimFrq.setObjectName(u"etTimFrq")
-        sizePolicy.setHeightForWidth(self.etTimFrq.sizePolicy().hasHeightForWidth())
-        self.etTimFrq.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.etTimFrq.sizePolicy().hasHeightForWidth())
+        self.etTimFrq.setSizePolicy(sizePolicy1)
+        self.etTimFrq.setMinimumSize(QSize(100, 0))
         self.etTimFrq.setMaximumSize(QSize(80, 16777215))
         self.etTimFrq.setFont(font3)
 
@@ -561,6 +581,7 @@ class Ui_MainWindow(object):
         self.label_33 = QLabel(self.layoutWidget_2)
         self.label_33.setObjectName(u"label_33")
         self.label_33.setEnabled(True)
+        self.label_33.setMinimumSize(QSize(100, 0))
         self.label_33.setMaximumSize(QSize(100, 16777215))
         self.label_33.setFont(font2)
 
@@ -569,6 +590,7 @@ class Ui_MainWindow(object):
         self.label_31 = QLabel(self.layoutWidget_2)
         self.label_31.setObjectName(u"label_31")
         self.label_31.setEnabled(True)
+        self.label_31.setMinimumSize(QSize(100, 0))
         self.label_31.setMaximumSize(QSize(100, 16777215))
         self.label_31.setFont(font2)
 
@@ -579,8 +601,9 @@ class Ui_MainWindow(object):
         self.cbTimFrqUnit.addItem("")
         self.cbTimFrqUnit.addItem("")
         self.cbTimFrqUnit.setObjectName(u"cbTimFrqUnit")
-        sizePolicy3.setHeightForWidth(self.cbTimFrqUnit.sizePolicy().hasHeightForWidth())
-        self.cbTimFrqUnit.setSizePolicy(sizePolicy3)
+        sizePolicy.setHeightForWidth(self.cbTimFrqUnit.sizePolicy().hasHeightForWidth())
+        self.cbTimFrqUnit.setSizePolicy(sizePolicy)
+        self.cbTimFrqUnit.setMinimumSize(QSize(80, 0))
         self.cbTimFrqUnit.setMaximumSize(QSize(60, 16777215))
         self.cbTimFrqUnit.setFont(font)
 
@@ -592,8 +615,9 @@ class Ui_MainWindow(object):
         self.cbTimTimeUnit.addItem("")
         self.cbTimTimeUnit.addItem("")
         self.cbTimTimeUnit.setObjectName(u"cbTimTimeUnit")
-        sizePolicy3.setHeightForWidth(self.cbTimTimeUnit.sizePolicy().hasHeightForWidth())
-        self.cbTimTimeUnit.setSizePolicy(sizePolicy3)
+        sizePolicy.setHeightForWidth(self.cbTimTimeUnit.sizePolicy().hasHeightForWidth())
+        self.cbTimTimeUnit.setSizePolicy(sizePolicy)
+        self.cbTimTimeUnit.setMinimumSize(QSize(80, 0))
         self.cbTimTimeUnit.setMaximumSize(QSize(60, 16777215))
         self.cbTimTimeUnit.setFont(font)
 
@@ -688,8 +712,8 @@ class Ui_MainWindow(object):
 
         self.etPolyOrder = QLineEdit(self.layoutWidget6)
         self.etPolyOrder.setObjectName(u"etPolyOrder")
-        sizePolicy.setHeightForWidth(self.etPolyOrder.sizePolicy().hasHeightForWidth())
-        self.etPolyOrder.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.etPolyOrder.sizePolicy().hasHeightForWidth())
+        self.etPolyOrder.setSizePolicy(sizePolicy1)
         self.etPolyOrder.setMaximumSize(QSize(60, 16777215))
         self.etPolyOrder.setFont(font3)
 
@@ -705,8 +729,8 @@ class Ui_MainWindow(object):
 
         self.etPolyLength = QLineEdit(self.layoutWidget6)
         self.etPolyLength.setObjectName(u"etPolyLength")
-        sizePolicy.setHeightForWidth(self.etPolyLength.sizePolicy().hasHeightForWidth())
-        self.etPolyLength.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.etPolyLength.sizePolicy().hasHeightForWidth())
+        self.etPolyLength.setSizePolicy(sizePolicy1)
         self.etPolyLength.setMaximumSize(QSize(60, 16777215))
         self.etPolyLength.setFont(font3)
 
@@ -745,7 +769,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(3)
+        self.tabWidget.setCurrentIndex(0)
         self.tabWidget_2.setCurrentIndex(1)
         self.tabWidget_3.setCurrentIndex(0)
         self.tabWidget_4.setCurrentIndex(1)
@@ -766,25 +790,25 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"R2", None));
         ___qtablewidgetitem4 = self.tableWidget.horizontalHeaderItem(4)
         ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"R3", None));
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u"Error", None))
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"V", None))
+        self.etError.setText("")
+        self.etVol.setText("")
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"VOL", None))
+        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Calculate", None))
+        self.label_12.setText(QCoreApplication.translate("MainWindow", u"%", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"VH", None))
-        self.etVh.setText("")
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"V", None))
+        self.etVh.setText("")
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"VL", None))
-        self.etVl.setText("")
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"V", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Vref", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"V", None))
+        self.etVl.setText("")
         self.etVref.setText("")
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"V", None))
+        self.label_10.setText(QCoreApplication.translate("MainWindow", u"V", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"VOH", None))
         self.etVoh.setText("")
-        self.label_10.setText(QCoreApplication.translate("MainWindow", u"V", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"VOL", None))
-        self.etVol.setText("")
-        self.label_11.setText(QCoreApplication.translate("MainWindow", u"V", None))
-        self.label_6.setText(QCoreApplication.translate("MainWindow", u"Error", None))
-        self.etError.setText("")
-        self.label_12.setText(QCoreApplication.translate("MainWindow", u"%", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Calculate", None))
         self.lblImg.setText("")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Schmitt Trigger", None))
         self.btnAdcCalculate.setText(QCoreApplication.translate("MainWindow", u"Calculate", None))
@@ -792,8 +816,8 @@ class Ui_MainWindow(object):
         self.label_25.setText(QCoreApplication.translate("MainWindow", u"V", None))
         self.label_27.setText(QCoreApplication.translate("MainWindow", u"ADC to Voltage", None))
         self.label_26.setText(QCoreApplication.translate("MainWindow", u"V", None))
-        self.label_32.setText("")
         self.label_24.setText(QCoreApplication.translate("MainWindow", u"Voltage to ADC", None))
+        self.label_32.setText("")
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"Resolution", None))
         self.etAdcResolution.setText("")
         self.label_14.setText(QCoreApplication.translate("MainWindow", u"bit", None))
