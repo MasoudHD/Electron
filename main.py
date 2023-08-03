@@ -143,7 +143,13 @@ class MainUI(QMainWindow):
                 self.lcdVoltage.display(mcu.d2a(Resolution, Vref, Offset, Gain, adcValue))
             elif self.rbVoltage.isChecked():
                 voltageValue = float(self.etAdcVoltage.text())
-                self.lcdAdc.display(int(mcu.a2d(Resolution, Vref, Offset, Gain, voltageValue)))
+                result = 0
+                if voltageValue > Vref:
+                    result = 2**Resolution
+                    QMessageBox.warning(self, 'Warning', "Input voltage should not be greater than reference voltage", QMessageBox.Ok)
+                else:
+                    result = int(mcu.a2d(Resolution, Vref, Offset, Gain, voltageValue))
+                self.lcdVoltage.display(result)
         except:
             QMessageBox.critical(self, 'Error', "An exception occurred", QMessageBox.Ok)
 
